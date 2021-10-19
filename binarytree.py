@@ -45,6 +45,8 @@ class bst_node:
             else:
                 self.right = bst_node(data)
 
+# Add child method is used to add new node in the binary search tree. 
+
     def in_order(self):
         elements = []
 
@@ -57,6 +59,8 @@ class bst_node:
             elements += self.right.in_order()
 
         return elements
+
+# In order prints the elements of binary search tree in left root right format. 
 
     def pre_order(self):
         elements = []
@@ -71,6 +75,8 @@ class bst_node:
 
         return elements
 
+# Pre order prints the elements of the binary search tree in root left right format. 
+
     def post_order(self):
         elements = []
 
@@ -83,6 +89,7 @@ class bst_node:
 
         return elements
 
+# Post order prints the elements of the binary search tree in left right root format. 
 
     def search(self, key):
         if self.data == key:
@@ -100,7 +107,7 @@ class bst_node:
             else:
                 return False
              
-
+# Search method is used to find out that the particular node exist in binary search tree or not. It only returns the bool value. 
 
 list = [55,6,4,9,22,5,6,4,8,9,55,44,88,99,77,66,33,22,11,20,30,40,50,60,70,80,90,100]
 root1 = bst_node(list[0])
