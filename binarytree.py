@@ -11,9 +11,6 @@
 # Insert complexity O(logn).
 
 
-
-
-
                         # SEARCHING IN BINARY SEARCH TREE
 
 # 1. BFS (breadth first search)
