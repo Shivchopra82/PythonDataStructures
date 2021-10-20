@@ -70,11 +70,11 @@ route_graph = Graph(routes)
 start = "Mumbai"
 end = "Chennai"
 
-print(f"All paths between: {start} and {end}: ",route_graph.get_paths(start,end))
-print(f"Shortest path between {start} and {end}: ", route_graph.get_shortest_path(start,end))
+print(f"All paths between: {start} and {end}: {route_graph.get_paths(start,end)}")
+print(f"Shortest path between {start} and {end}: {route_graph.get_shortest_path(start,end)}")
 
 start = "Pune"
 end = "Chennai"
 
-print(f"All paths between: {start} and {end}: ",route_graph.get_paths(start,end))
-print(f"Shortest path between {start} and {end}: ", route_graph.get_shortest_path(start,end))
+print(f"All paths between: {start} and {end}: {route_graph.get_paths(start,end)}")
+print(f"Shortest path between {start} and {end}: {route_graph.get_shortest_path(start,end)}")
