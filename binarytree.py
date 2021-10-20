@@ -20,6 +20,9 @@
 #    - Pre order traversal   root L R
 #    - Post order traversal  L R root
 
+from typing import no_type_check_decorator
+
+
 class bst_node:
     def __init__(self, data):
         self.data = data
@@ -103,8 +106,45 @@ class bst_node:
                 return self.right.search(key)
             else:
                 return False
-             
+
 # Search method is used to find out that the particular node exist in binary search tree or not. It only returns the bool value. 
+
+    def min(self):
+        if self.left is None:
+            return self.data
+        return self.left.min()
+
+# This function will return minimum of all the nodes in the tree.
+
+    def max(self):
+        if  self.right is None:
+            return self.data
+        return self.right.max()
+
+# This function will return the maximun of all the nodes in the tree.
+
+    def delete(self, val):
+        if val < self.data:
+            if self.left:
+                self.left = self.left.delete(val)
+        elif val > self.data:
+            if self.right:
+                self.right = self.right.delete(val)
+        else:
+            if self.left is None and self.right is None:
+                return None
+            elif self.right is None:
+                return self.left
+            elif self.left is None:
+                return self.right
+
+            minval = self.right.min()
+            self.data = minval
+            self.right = self.right.delete(minval)
+
+        return self
+
+# The delete function is used to delete the particular node from the tree.
 
 list = [55,6,4,9,22,5,6,4,8,9,55,44,88,99,77,66,33,22,11,20,30,40,50,60,70,80,90,100]
 root1 = bst_node(list[0])
@@ -122,4 +162,8 @@ print(root1.post_order())
 print(root2.post_order())
 print(root1.in_order())    
 print(root2.in_order())    
-print(root2.search(7))   
+print(root2.search(7))  
+root1.delete(6)
+root2.delete(6)
+print(root1.in_order())
+print(root2.in_order())
