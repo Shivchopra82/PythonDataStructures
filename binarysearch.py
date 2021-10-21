@@ -4,6 +4,7 @@
 # 4.If middle element< searching element then we take second half array and search again. 
 # 5. If middle element> searching element then we take first half array and search again by same method. 
 # 6.If middle element = search element then search is complement we return the middle element.
+# 7.O(logn) big O complexit of binary search of binary search is logn.
 
 def linear_search(num_list, val):
     for index, element in enumerate(num_list):
