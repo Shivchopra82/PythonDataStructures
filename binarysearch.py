@@ -25,8 +25,9 @@ def bin_search(num_list, val):
             left = mid + 1
         else:
             right = mid - 1
-
     return "not found"
+
+# This is the binary search function. It uses the principle of binary search described above.
 
 def recursive_binary(num_list, val, left, right):
     if left > right:
@@ -42,7 +43,7 @@ def recursive_binary(num_list, val, left, right):
         right = mid - 1
     
     return recursive_binary(num_list, val, left, right)
-    
+#  Recursive function is used when we want to search an element between given index numbers.   
 
 
 nums = [12, 15, 17, 19, 21, 24, 45, 67]
