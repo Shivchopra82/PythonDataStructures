@@ -5,37 +5,46 @@
 #    - Hoare partition scheme (start element pivot)
 #    - Lomuto partition scheme (end elmement pivot)
 # 5. Big O complexity O(n^2).
+
+
+
 def swap(x,y,num_list):
-    temp = num_list[a]
-    num_list[a] =  num_list[b]
-    num_list[b] = temp
+    temp = num_list[x]
+    num_list[x] =  num_list[y]
+    num_list[y] = temp
     
 
 
-def partition(num_list):
-    pivot_index = 0
-    pivot = num_list[0]
+def partition(num_list,start, end):
+    pivot_index = start
+    pivot = num_list[pivot_index]
+    while start < end:
+        while start < len(num_list) and num_list[start] <= pivot:
+            start+=1
 
-    start = pivot_index + 1
-    end = len(num_list)-1
-    while num_list[start] <= pivot:
-        start+=1
+        while num_list[end] > pivot:
+            end-=1
 
-    while num_list[end] >= pivot:
-        end-=1
+        if start < end:
+            swap(start, end, num_list)
+    swap(pivot_index, end, num_list)
+    return end
 
+    # This function divides the array in to two partion by sorting it according to pivot point as explained above.
+
+
+
+def quick_sort(num_list, start, end):
     if start < end:
-        swap(start, end, num_list)
-
-def quick_sort(num_list):
-    partition(num_list)
-    
-
-
-
+        key = partition(num_list, start, end)
+        quick_sort(num_list, start, key-1)   
+                                    #continuing process for left partition.
+        quick_sort(num_list, key+1, end)   
+                                    #continuing same process for right partition.
+    # This is the main quick sort function which sorts the array by partitioning it using the partition function.
 
 
 
-elements = [2,5,9,7,55,66,4,2,33,51,65,25,11,64]
-quick_sort(elements)
+elements = [52,2,5,9,7,55,66,4,2,33,51,65,25,11,64]
+quick_sort(elements, 0, len(elements)-1)
 print(elements)
