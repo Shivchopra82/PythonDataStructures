@@ -3,6 +3,10 @@
 # 3.After that it start merging all those parts(taking two at one time) by comparing the elements with each other. 
 # 4.Python's time sort algorithm used this mergesort.
 # 5.Performance O(nlogn).
+
+
+
+
 def merge_sort(num_list):
     if len(num_list)<=1:
         return num_list
@@ -13,6 +17,9 @@ def merge_sort(num_list):
     merge_sort(right)
     merge(left, right, num_list)
     # This function do the dividing part of the algorithm.
+
+
+
 
 def merge(a,b, num_list):
     sorted_list = []
@@ -37,6 +44,9 @@ def merge(a,b, num_list):
         j+=1
         k+=1
     # This function merge all the divided parts of array in to the sorted array.
+
+
+
 
 
 elements = [1,2,5,6,4,9,22,11,25,36,24,25,29,28,27,30,36,15,0,25,64,95,15,46,25,35,369,54,695,262,364,621,000,264,6775,41]
