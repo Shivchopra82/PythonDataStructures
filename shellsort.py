@@ -11,7 +11,16 @@
 def shell_sort(lst):
     size = len(lst)
     gap = size//2
-    for i in range(gap, size)
+    while gap > 0:
+        for i in range(gap,size):
+            anchor = lst[i]
+            j = i
+            while j>=gap and lst[j-gap]>anchor:
+                lst[j] = lst[j-gap]
+                j -= gap
+            lst[j] = anchor
+        gap = gap // 2
+
 
 
 
